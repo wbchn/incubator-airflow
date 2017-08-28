@@ -45,6 +45,7 @@ _hooks = {
     'mysql_hook': ['MySqlHook'],
     'postgres_hook': ['PostgresHook'],
     'presto_hook': ['PrestoHook'],
+    'athena_hook': ['AthenaHook'],
     'samba_hook': ['SambaHook'],
     'sqlite_hook': ['SqliteHook'],
     'S3_hook': ['S3Hook'],

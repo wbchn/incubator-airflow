@@ -108,7 +108,7 @@ def check_previous():
               "please uninstall it first. Then reinstall.")
         sys.exit(1)
 
-
+athena = ['pyathena>1.1.0']
 async = [
     'greenlet>=0.4.9',
     'eventlet>= 0.9.7',

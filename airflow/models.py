@@ -565,6 +565,7 @@ class Connection(Base):
         ('redis', 'Redis',),
         ('wasb', 'Azure Blob Storage'),
         ('databricks', 'Databricks',),
+        ('athena', 'Athena',),
     ]
 
     def __init__(
@@ -674,6 +675,9 @@ class Connection(Base):
             elif self.conn_type == 'presto':
                 from airflow.hooks.presto_hook import PrestoHook
                 return PrestoHook(presto_conn_id=self.conn_id)
+            elif self.conn_type == 'athena':
+                from airflow.hooks.athena_hook import AthenaHook
+                return AthenaHook(athena_conn_id=self.conn_id)
             elif self.conn_type == 'hiveserver2':
                 from airflow.hooks.hive_hooks import HiveServer2Hook
                 return HiveServer2Hook(hiveserver2_conn_id=self.conn_id)
